@@ -12,17 +12,23 @@ jobs:
     Arthur-Athena-Master-V:
      uses: ./.github/workflows/Arthur&Athena-Master(V).yml
 
-    Arthur-Athena-Stable:
-     uses: ./.github/workflows/Arthur&Athena-Stable(24.10).yml
+    Arthur-Athena-Stable-B:
+     uses: ./.github/workflows/Arthur&Athena-Stable(B).yml
 
+    Arthur-Athena-Stable-V:
+     uses: ./.github/workflows/Arthur&Athena-Stable(V).yml
+ 
     Taiyi-Master-B:
      uses: ./.github/workflows/Taiyi-Master(B).yml
 
     Taiyi-Master-V:
      uses: ./.github/workflows/Taiyi-Master(V).yml
 
-    Taiyi-Stable:
-     uses: ./.github/workflows/Taiyi-Stable(24.10).yml
+    Taiyi-Stable-B:
+     uses: ./.github/workflows/Taiyi-Stable(B).yml
+
+    Taiyi-Stable-V:
+     uses: ./.github/workflows/Taiyi-Stable(V).yml
 
     All-Base:
      uses: ./.github/workflows/All-Base.yml

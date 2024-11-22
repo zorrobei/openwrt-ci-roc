@@ -1,4 +1,4 @@
-name: Arthur&Athena-Stable(24.10)
+name: Arthur&Athena-Stable(B)
 
 on:
   workflow_dispatch:
