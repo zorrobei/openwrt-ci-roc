@@ -8,6 +8,7 @@ rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/net/adguardhome
 rm -rf feeds/packages/net/ariang
 rm -rf package/emortal/luci-app-athena-led
+rm -rf package/libs/openssl
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -23,7 +24,8 @@ function git_sparse_clone() {
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 git_sparse_clone main https://github.com/kenzok8/small-package adguardhome luci-app-adguardhome
 git_sparse_clone main https://github.com/VIKINGYFY/packages luci-app-wolplus
-git_sparse_clone master https://github.com/immortalwrt/packages net/ariang
+git_sparse_clone master https://github.com/openwrt/packages net/ariang
+git_sparse_clone openwrt-23.05 https://github.com/openwrt/openwrt package/libs/openssl
 git clone --depth=1 https://github.com/lwb1978/openwrt-gecoosac package/openwrt-gecoosac
 git clone --depth=1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
 git clone --depth=1 https://github.com/NONGFAH/luci-app-athena-led package/luci-app-athena-led
