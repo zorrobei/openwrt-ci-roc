@@ -7,16 +7,18 @@ on:
 
 jobs:
     Arthur-Athena-6-12:
-     uses: ./.github/workflows/Arthur&Athena-6.12.yml
+      uses: ./.github/workflows/Arthur&Athena-6.12.yml
 
     Arthur-Athena-Master:
-     uses: ./.github/workflows/Arthur&Athena-Master.yml
+      uses: ./.github/workflows/Arthur&Athena-Master.yml
  
     Taiyi-6-12:
-     uses: ./.github/workflows/Taiyi-6.12.yml
+      needs: Arthur-Athena-6-12
+      uses: ./.github/workflows/Taiyi-6.12.yml
 
     Taiyi-Master:
-     uses: ./.github/workflows/Taiyi-Master.yml
+      needs: Arthur-Athena-Master
+      uses: ./.github/workflows/Taiyi-Master.yml
 
     All-Clean:
-     uses: ./.github/workflows/All-Clean.yml
+      uses: ./.github/workflows/All-Clean.yml
