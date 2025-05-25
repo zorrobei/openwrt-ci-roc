@@ -6,19 +6,19 @@ on:
     - cron: 0 20 * * 5  # 北京时间星期六凌晨4点，定时触发
 
 jobs:
-    Arthur-Athena-6-12:
-      uses: ./.github/workflows/Arthur&Athena-6.12.yml
+    Arthur-Athena-LibWrt:
+      uses: ./.github/workflows/Arthur&Athena-LibWrt.yml
 
-    Arthur-Athena-Master:
-      uses: ./.github/workflows/Arthur&Athena-Master.yml
+    Arthur-Athena-ImmortalWrt:
+      uses: ./.github/workflows/Arthur&Athena-ImmortalWrt.yml
  
-    Taiyi-6-12:
-      needs: Arthur-Athena-6-12
-      uses: ./.github/workflows/Taiyi-6.12.yml
+    Taiyi-LibWrt:
+      needs: Arthur-Athena-LibWrt
+      uses: ./.github/workflows/Taiyi-LibWrt.yml
 
-    Taiyi-Master:
-      needs: Arthur-Athena-Master
-      uses: ./.github/workflows/Taiyi-Master.yml
+    Taiyi-ImmortalWrt:
+      needs: Arthur-Athena-ImmortalWrt
+      uses: ./.github/workflows/Taiyi-ImmortalWrt.yml
 
     All-Clean:
       uses: ./.github/workflows/All-Clean.yml
