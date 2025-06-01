@@ -30,7 +30,7 @@ function git_sparse_clone() {
 git clone --depth=1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 git_sparse_clone master https://github.com/kenzok8/openwrt-packages adguardhome luci-app-adguardhome
-git_sparse_clone master https://github.com/immortalwrt/packages net/ariang
+git_sparse_clone master https://github.com/laipeng668/packages net/ariang
 git_sparse_clone main https://github.com/VIKINGYFY/packages luci-app-wolplus
 git clone --depth=1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
 git clone --depth=1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
