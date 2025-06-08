@@ -6,16 +6,9 @@ on:
     - cron: 0 20 * * 5  # 北京时间星期六凌晨4点，定时触发
 
 jobs:
-    Arthur-Athena-LibWrt:
-      uses: ./.github/workflows/Arthur&Athena-LibWrt.yml
-
     Arthur-Athena-ImmortalWrt:
       uses: ./.github/workflows/Arthur&Athena-ImmortalWrt.yml
  
-    Taiyi-LibWrt:
-      needs: Arthur-Athena-LibWrt
-      uses: ./.github/workflows/Taiyi-LibWrt.yml
-
     Taiyi-ImmortalWrt:
       needs: Arthur-Athena-ImmortalWrt
       uses: ./.github/workflows/Taiyi-ImmortalWrt.yml
