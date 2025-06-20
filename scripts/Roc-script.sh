@@ -8,8 +8,6 @@ mkdir -p feeds/packages/net/vlmcsd/patches
 cp -f $GITHUB_WORKSPACE/patches/fix_vlmcsd_compile_with_ccache.patch feeds/packages/net/vlmcsd/patches
 
 # 移除要替换的包
-rm -rf feeds/packages/net/alist
-rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/packages/net/open-app-filter
 rm -rf feeds/packages/net/adguardhome
 rm -rf feeds/packages/net/ariang
@@ -25,9 +23,9 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
-# Go & AList & AdGuardHome & AriaNg & WolPlus & Lucky & OpenAppFilter & 集客无线AC控制器 & 雅典娜LED控制
+# Go & OpenList & AdGuardHome & AriaNg & WolPlus & Lucky & OpenAppFilter & 集客无线AC控制器 & 雅典娜LED控制
 git clone --depth=1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
-git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
+git clone --depth=1 https://github.com/sbwml/luci-app-openlist package/openlist
 git_sparse_clone master https://github.com/kenzok8/openwrt-packages adguardhome luci-app-adguardhome
 git_sparse_clone master https://github.com/laipeng668/packages ariang luci-app-wolplus
 git clone --depth=1 https://github.com/gdy666/luci-app-lucky package/luci-app-lucky
