@@ -6,6 +6,10 @@ on:
     - cron: 0 20 * * 5  # 北京时间星期六凌晨4点，定时触发
 
 jobs:
+
+    IPQ60XX-LibWrt:
+      uses: ./.github/workflows/IPQ60XX-LibWrt.yml
+
     Arthur-Athena-ImmortalWrt:
       uses: ./.github/workflows/Arthur&Athena-ImmortalWrt.yml
  

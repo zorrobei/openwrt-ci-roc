@@ -1,4 +1,4 @@
-name: x86-64-ImmortalWrt
+name: IPQ60XX-LibWrt
 
 on:
   workflow_dispatch:
@@ -7,15 +7,15 @@ on:
   #   - cron: 0 20 * * *
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt.git
-  REPO_BRANCH: master
-  CONFIG_FILE: configs/x86-64.config
+  REPO_URL: https://github.com/laipeng668/openwrt-6.x.git
+  REPO_BRANCH: k6.12-nss
+  CONFIG_FILE: configs/IPQ60XX.config
   DIY_SCRIPT: scripts/Roc-script.sh
   CLASH_KERNEL: amd64
   MADS: false
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: x86-64
+  FIRMWARE_TAG: IPQ60XX
   TZ: Asia/Shanghai
 
 jobs:
@@ -154,10 +154,10 @@ jobs:
       if: steps.compile.outputs.status == 'success'
       run: |
         cd $OPENWRT_PATH/bin/targets/*/*
-        cp $OPENWRT_PATH/.config x86.64.config
-        mv config.buildinfo x86.64.config.buildinfo
+        cp $OPENWRT_PATH/.config ipq60xx.config
+        mv config.buildinfo ipq60xx.config.buildinfo
         mv -f $OPENWRT_PATH/bin/packages/*/*/*.apk packages
-        tar -zcf x86.64.Packages.tar.gz packages
+        tar -zcf ipq60xx.Packages.tar.gz packages
         rm -rf packages feeds.buildinfo version.buildinfo sha256sums profiles.json
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
 
@@ -180,12 +180,14 @@ jobs:
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
           ### 📒 固件信息
-          - 这是基于ImmortalWrt主线制作的个人定制固件，默认主题为Argon；该固件在ImmortalWrt的基础上，添加了额外的软件包cpufreq、ddns、ttyd、upnp、wolplus、samba4、vlmcsd、aria2、autoreboot、uhttpd、frps、frpc、diskman、hd-idle、banip、acme、arpbind、usb-printer、homeproxy、openlist、adguardhome、filebrowser、dockerman、gecoosac、lucky、oaf、sqm，并添加了若干工具，具体详见x86-64.config。
+          - 这是开启全功能NSS的6.12内核固件，默认主题为Argon；该固件在ImmortalWrt的基础上，添加了额外的软件包cpufreq、ddns、ttyd、upnp、wolplus、samba4、vlmcsd、aria2、autoreboot、uhttpd、wifischedule、frps、frpc、diskman、hd-idle、banip、acme、arpbind、usb-printer、homeproxy、adguardhome、oaf、sqm，并添加了若干工具，具体详见IPQ60XX.config。
           - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
           - 🌐 默认地址: **192.168.2.1**
           - 🔑 默认密码: none
+          - 🚀 WiFi名称: **LibWrt**
+          - 🔑 WiFi密码: 12345678
           ### 🧊 固件版本
           - 固件内核版本：**${{ env.VERSION_KERNEL }}**
           - 固件编译前最后一次➦[主源码](${{ env.REPO_URL }})更新记录

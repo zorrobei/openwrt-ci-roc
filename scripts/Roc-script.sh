@@ -12,6 +12,7 @@ rm -rf feeds/packages/net/open-app-filter
 rm -rf feeds/packages/net/adguardhome
 rm -rf feeds/packages/net/ariang
 rm -rf feeds/packages/lang/golang
+rm -rf package/emortal/luci-app-athena-led
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
